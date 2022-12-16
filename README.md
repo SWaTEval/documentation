@@ -29,10 +29,10 @@ Make sure you install sphynx installed or install it using:
 apt install python3-sphinx
 ```
 
-Create an enviromental variable containing the location of the scanner project on your machine:
+Create an enviromental variable that points to the location of the SWaTEval framework repository on your machine:
 
 ```
-export SCANNER_PROJECT_LOCATION="/full/path/to/the/scanner/project/root/folder"
+export SCANNER_PROJECT_LOCATION="**path to the SWaTEval framework repository**"
 ```
 
 *Note: The setup in `conf.py` uses the env variable SCANNER_PROJECT_LOCATION to reference the scanner project files for auto documentation.*  
@@ -48,8 +48,9 @@ make html
 
 To view the documentation you need to run an http-server in the ```/build/html``` directory.
 
-A fast way to do this is by using Node. Assuming that you have it installed on your system,
-install the [http-server](https://github.com/http-party/http-server) package from npm:
+A fast way to do this is by using [Node Js](https://nodejs.org/en/) (assuming that you have it installed on your system).
+
+Install the [http-server](https://github.com/http-party/http-server) package from npm:
 
 ```
 npm install --global http-server
@@ -63,19 +64,21 @@ http-server ./build/html -p 8085
 
 The documentation now should be available at http://localhost:8085/general/index.html
 
-## Run in Docker
+## Optional: Run in Docker
 
-Build the image by using:
+You can run the documentation as a Docker container which will build it and host it directly. 
+
+To do so, first build the image using:
 
 ```
-docker build -t scanner-documentation .
+docker build -t documentation .
 ``` 
-The Dockerfile will build the documentation and host it on an http server on port 8085
+The Dockerfile will build the documentation and host it as an http server on port 8085
 
 Run the image in container by using:
 
 ```
-docker run --name scanner-documentation -p8085:8085 scanner-documentation
+docker run --name documentation -p8085:8085 documentation
 ``` 
 
-Now you should be able to acces the server via `http://localhost:8085`
+Now you should be able to acces the server via http://localhost:8085

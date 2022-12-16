@@ -1,4 +1,4 @@
 #!/bin/bash
-export SCANNER_PROJECT_LOCATION="**path to SWaTEval framework**"
+export SCANNER_PROJECT_LOCATION="**path to the SWaTEval framework repository**"
 rm -r ./build
 make html
