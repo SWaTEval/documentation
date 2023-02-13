@@ -1,5 +1,9 @@
 # SWaTEval documentation
 
+This repository has been published as a part of the following paper. Please consider citing this paper if you use our work in your research.
+
+> Borcherding, A.; Penkov, N.; Giraud, M. and Beyerer, J. (2023). SWaTEval: An Evaluation Framework for Stateful Web Application Testing. In Proceedings of the 9th International Conference on Information Systems Security and Privacy - ICISSP
+
 ## Building the documentation
 
 Make sure you are using Python 3.8. To setup a conda environment in Linux run:
@@ -29,14 +33,21 @@ Make sure you install sphynx installed or install it using:
 apt install python3-sphinx
 ```
 
-Create an enviromental variable that points to the location of the SWaTEval framework repository on your machine:
+Create an environment variable that points to the location of the SWaTEval framework repository on your machine:
 
 ```
 export SCANNER_PROJECT_LOCATION="**path to the SWaTEval framework repository**"
 ```
 
 *Note: The setup in `conf.py` uses the env variable SCANNER_PROJECT_LOCATION to reference the scanner project files for auto documentation.*  
-Afterwards you should be able to rebuild the project by yourself by using:
+
+Make sure to install the requirements from the SWaTEval framework repository in order to see all the code doc strings referred to in this documentation.
+
+```
+pip install -r **path to the SWaTEval framework repository**/requirements.txt
+```
+
+Afterwards, you should be able to build the project by using:
 
 ```
 make html
@@ -81,4 +92,4 @@ Run the image in container by using:
 docker run --name documentation -p8085:8085 documentation
 ``` 
 
-Now you should be able to acces the server via http://localhost:8085
+Now you should be able to access the server via http://localhost:8085
